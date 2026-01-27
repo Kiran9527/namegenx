@@ -1,0 +1,120 @@
+/* =========================
+   FOOTER BASE
+========================= */
+.footer {
+  background: #966262;
+  border-top: 1px solid #772121;
+  padding: 80px 32px 40px;
+  color: #efeded;
+}
+
+/* =========================
+   FOOTER GRID
+========================= */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+/* =========================
+   BRAND / LOGO
+========================= */
+.footer-logo {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+/* =========================
+   FOOTER COLUMNS
+========================= */
+.footer-col h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.footer-col p {
+  font-size: 14px;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+/* =========================
+   FOOTER LINKS
+========================= */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #f5f5f5;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  opacity: 0.85;
+  text-decoration: underline;
+}
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+.footer-bottom {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  font-size: 13px;
+  color: #eaeaea;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 20px 32px;
+  }
+
+  .footer-container {
+    gap: 32px;
+    text-align: center;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+  .footer {
+    padding: 48px 16px 28px;
+  }
+
+  .footer-logo {
+    font-size: 20px;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 12px;
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+    font-size: 12px;
+  }
+}

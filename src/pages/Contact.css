@@ -1,0 +1,177 @@
+/* =========================
+   PAGE WRAPPER
+========================= */
+.contact-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+/* =========================
+   HERO
+========================= */
+.contact-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.contact-hero p {
+  font-size: 18px;
+  color: #666;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* =========================
+   CARD
+========================= */
+.contact-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.contact-card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.contact-sub {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   FORM LAYOUT
+========================= */
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.contact-field label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+.contact-field input,
+.contact-field textarea {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.contact-field textarea {
+  resize: vertical;
+}
+
+/* Focus state */
+.contact-field input:focus-visible,
+.contact-field textarea:focus-visible {
+  outline: none;
+  border-color: #4f5dff;
+  box-shadow: 0 0 0 2px rgba(79, 93, 255, 0.15);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.contact-btn {
+  background: #4f5dff;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.contact-btn:hover {
+  background: #3e4cff;
+  transform: translateY(-1px);
+}
+
+.contact-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 60px 16px;
+  }
+
+  .contact-hero h1 {
+    font-size: 32px;
+  }
+
+  .contact-hero p {
+    font-size: 16px;
+  }
+
+  .contact-card {
+    padding: 24px;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 48px 16px;
+  }
+
+  .contact-hero h1 {
+    font-size: 26px;
+  }
+
+  .contact-hero p {
+    font-size: 15px;
+  }
+
+  .contact-card {
+    padding: 20px;
+  }
+
+  .contact-btn {
+    width: 100%;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

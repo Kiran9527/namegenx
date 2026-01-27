@@ -1,0 +1,88 @@
+.yt-page {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.yt-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.yt-hero h1 {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.yt-hero p {
+  color: #666;
+  font-size: 18px;
+}
+
+.yt-box {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.yt-input-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.yt-input-row input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.yt-input-row button {
+  background: #4f5dff;
+  color: #fff;
+  border: none;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.yt-content h2 {
+  margin-top: 50px;
+  margin-bottom: 12px;
+}
+
+.yt-content p {
+  color: #555;
+  line-height: 1.7;
+}
+
+.yt-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.yt-links a {
+  border: 1px solid #ddd;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #111;
+}
+
+.yt-faq {
+  margin-top: 80px;
+}
+
+.yt-faq details {
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+}
+
+.yt-faq summary {
+  font-weight: 600;
+  cursor: pointer;
+}

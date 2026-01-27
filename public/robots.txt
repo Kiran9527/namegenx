@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://namegenx.com/sitemap.xml

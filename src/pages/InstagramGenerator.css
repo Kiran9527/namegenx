@@ -1,0 +1,203 @@
+/* =========================
+   PAGE WRAPPER
+========================= */
+.ig-page {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* =========================
+   HERO
+========================= */
+.ig-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.ig-hero h1 {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.ig-hero p {
+  color: #666;
+  font-size: 18px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* =========================
+   GENERATOR BOX
+========================= */
+.ig-box {
+  background: #ffffff;
+  border: 1px solid #eee;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Input row */
+.ig-input-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.ig-input-row input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.ig-input-row input:focus-visible {
+  outline: none;
+  border-color: #4f5dff;
+  box-shadow: 0 0 0 2px rgba(79, 93, 255, 0.15);
+}
+
+.ig-input-row button {
+  background: #4f5dff;
+  color: #ffffff;
+  border: none;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.ig-input-row button:hover {
+  background: #3e4cff;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.ig-content h2 {
+  margin-top: 50px;
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.ig-content p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* =========================
+   LINKS
+========================= */
+.ig-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.ig-links a {
+  border: 1px solid #ddd;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.ig-links a:hover {
+  border-color: #4f5dff;
+  color: #4f5dff;
+}
+
+/* =========================
+   FAQ
+========================= */
+.ig-faq {
+  margin-top: 80px;
+}
+
+.ig-faq details {
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+}
+
+.ig-faq summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 768px) {
+  .ig-page {
+    padding: 60px 16px;
+  }
+
+  .ig-hero h1 {
+    font-size: 32px;
+  }
+
+  .ig-hero p {
+    font-size: 16px;
+  }
+
+  .ig-box {
+    padding: 24px;
+  }
+
+  .ig-input-row {
+    flex-direction: column;
+  }
+
+  .ig-input-row button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+  .ig-page {
+    padding: 48px 16px;
+  }
+
+  .ig-hero h1 {
+    font-size: 26px;
+  }
+
+  .ig-hero p {
+    font-size: 15px;
+  }
+
+  .ig-content h2 {
+    font-size: 22px;
+  }
+
+  .ig-box {
+    padding: 20px;
+  }
+
+  .ig-links a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

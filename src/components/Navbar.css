@@ -1,0 +1,116 @@
+/* =========================
+   NAVBAR BASE
+========================= */
+.navbar {
+  height: 64px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* =========================
+   BRAND / LOGO
+========================= */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.nav-title {
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4f5dff, #c65cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+.nav-right {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #4f5dff;
+}
+
+/* Active route */
+.nav-link.active {
+  color: #4f5dff;
+  font-weight: 600;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+.nav-link:focus-visible {
+  outline: 2px solid #4f5dff;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .nav-right {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+  .nav-title {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
