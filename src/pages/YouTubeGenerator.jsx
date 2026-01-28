@@ -1,6 +1,7 @@
 import "./YouTubeGenerator.css";
 import UsernameGenerator from "../components/UsernameGenerator";
 import { setSEO } from "../utils/seo";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 const YouTubeGenerator = () => {
@@ -98,8 +99,8 @@ const YouTubeGenerator = () => {
         </p>
 
         <div className="yt-links">
-          <a href="/instagram-username-generator">Instagram</a>
-          <a href="/gaming-username-generator">Gaming</a>
+          <Link to="/instagram-username-generator">Instagram</Link>
+          <Link to="/gaming-username-generator">Gaming</Link>
         </div>
       </section>
 

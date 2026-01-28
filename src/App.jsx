@@ -2,14 +2,18 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Contact from "./pages/Contact";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
+
 import InstagramGenerator from "./pages/InstagramGenerator";
 import YouTubeGenerator from "./pages/YouTubeGenerator";
 import GamingGenerator from "./pages/GamingGenerator";
+
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
+
 function App() {
   return (
     <>
@@ -38,7 +42,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
-        
       </Routes>
 
       <Footer />

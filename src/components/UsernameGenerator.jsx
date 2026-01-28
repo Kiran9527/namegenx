@@ -1,89 +1,84 @@
 import { useState } from "react";
 import "./UsernameGenerator.css";
 
-const words = [
-    "tech", "hub", "zone", "media", "studio", "brand", "labs", "world",
-    "digital", "network", "space", "verse", "group", "team", "factory"
+const WORDS = [
+  "tech", "tube", "gaming", "media", "hub", "studio", "world",
+  "zone", "play", "official", "pro", "x", "daily", "prime"
 ];
 
-const adjectives = [
-    "cool", "smart", "fast", "epic", "royal", "bold", "urban", "modern",
-    "creative", "dynamic", "future", "prime", "elite"
-];
-
-const random = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const SUFFIXES = ["tv", "yt", "hq", "live", "official", "x"];
 
 const UsernameGenerator = ({ type }) => {
-    const [keyword, setKeyword] = useState("");
-    const [results, setResults] = useState([]);
-    const [copied, setCopied] = useState(null); // 👈 track copied text
+  const [keyword, setKeyword] = useState("");
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-    const generate = () => {
-        const unique = new Set();
+  const createName = () => {
+    const base =
+      keyword.trim().length > 0
+        ? keyword.toLowerCase().replace(/\s+/g, "")
+        : WORDS[Math.floor(Math.random() * WORDS.length)];
 
-        while (unique.size < 20) {
-            let name = "";
+    const suffix =
+      SUFFIXES[Math.floor(Math.random() * SUFFIXES.length)];
 
-            if (type === "instagram" || type === "gaming") {
-                name = `${keyword || random(words)}${Math.floor(Math.random() * 1000)}`;
-            }
+    const number = Math.floor(Math.random() * 999);
 
-            if (type === "youtube") {
-                name = `${random(adjectives)} ${keyword || random(words)}`;
-            }
+    return `${base}${suffix}${number}`;
+  };
 
-            unique.add(name.toLowerCase());
-        }
+  const generateNames = () => {
+    setLoading(true);
 
-        setResults([...unique]);
-        setCopied(null); // reset copied state
-    };
+    const set = new Set();
+    let attempts = 0;
 
-    const copy = (text) => {
-        navigator.clipboard.writeText(text);
-        setCopied(text);
+    // SAFE LOOP (NO FREEZE)
+    while (set.size < 20 && attempts < 500) {
+      set.add(createName());
+      attempts++;
+    }
 
-        setTimeout(() => {
-            setCopied(null);
-        }, 1500);
-    };
+    setResults([...set]);
+    setLoading(false);
+  };
 
-    return (
-        <div className="gen-wrapper">
-            <label>Keyword (optional)</label>
+  return (
+    <div className="username-generator">
+      <input
+        type="text"
+        placeholder={`Enter ${type} keyword (optional)`}
+        value={keyword}
+        onChange={(e) => setKeyword(e.target.value)}
+      />
 
-            <div className="gen-input-row">
-                <input
-                    placeholder="e.g. gaming, creative, tech"
-                    value={keyword}
-                    onChange={(e) => setKeyword(e.target.value.toLowerCase())}
-                />
-                <button onClick={generate}>✨ Generate</button>
-            </div>
+      {/* IMPORTANT: type="button" prevents page reload */}
+      <button type="button" onClick={generateNames} disabled={loading}>
+        {loading ? "Generating..." : "Generate"}
+      </button>
 
-            {results.length > 0 && (
-                <div className="gen-results">
-                    {results.map((name, i) => (
-                        <div
-                            key={i}
-                            className={`gen-box-card ${copied === name ? "copied" : ""}`}
-                        >
-                            <div className="gen-box-text">{name}</div>
+      {results.length > 0 && (
+        <ul className="results">
+          {results.map((name, index) => (
+            <li key={index} className="result-item">
+              <span>{name}</span>
 
-                            <button
-                                className="gen-box-btn"
-                                onClick={() => copy(name)}
-                            >
-                                {copied === name ? "Copied ✓" : "Copy"}
-                            </button>
-                        </div>
-                    ))}
-                </div>
+              <div className="actions">
+                <button
+                  type="button"
+                  onClick={() => navigator.clipboard.writeText(name)}
+                >
+                  Copy
+                </button>
 
-
-            )}
-        </div>
-    );
+                
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
 };
 
 export default UsernameGenerator;

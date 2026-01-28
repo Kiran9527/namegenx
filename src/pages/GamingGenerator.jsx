@@ -1,4 +1,5 @@
 import "./GamingGenerator.css";
+import { Link } from "react-router-dom";
 import UsernameGenerator from "../components/UsernameGenerator";
 import { setSEO } from "../utils/seo";
 import { useEffect } from "react";
@@ -98,8 +99,8 @@ const GamingGenerator = () => {
         <p>If you're serious about gaming, consider creating social media accounts with your gaming username. Share your best plays, connect with other gamers, and build a community around your gaming identity. Your username is the first step in establishing yourself in the gaming world—make it count!</p>
 
         <div className="game-links">
-          <a href="/instagram-username-generator">Instagram Generator</a>
-          <a href="/youtube-name-generator">YouTube Generator</a>
+          <Link to="/instagram-username-generator">Instagram</Link>
+          <Link to="/youtube-name-generator">YouTube</Link>
         </div>
       </section>
 

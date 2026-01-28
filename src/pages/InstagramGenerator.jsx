@@ -1,4 +1,5 @@
 import "./InstagramGenerator.css";
+import { Link } from "react-router-dom";
 import UsernameGenerator from "../components/UsernameGenerator";
 import { useEffect } from "react";
 import { setSEO } from "../utils/seo";
@@ -96,8 +97,8 @@ const InstagramGenerator = () => {
         </p>
 
         <div className="ig-links">
-          <a href="/youtube-name-generator">YouTube</a>
-          <a href="/gaming-username-generator">Gaming</a>
+          <Link to="/youtube-name-generator">YouTube</Link>
+          <Link to="/gaming-username-generator">Gaming</Link>
         </div>
       </section>
 
