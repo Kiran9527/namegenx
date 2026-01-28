@@ -1,4 +1,5 @@
 import "./Hero.css";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -16,7 +17,7 @@ const Hero = () => {
         </p>
 
         <div className="hero-buttons">
-          <a href="/instagram-username-generator" className="btn-primary">Get Started</a>   
+          <Link to="/instagram-username-generator">Get Started</Link>   
         </div>
       </div>
     </section>
