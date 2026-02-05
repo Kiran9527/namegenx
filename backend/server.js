@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 // Allow frontend domain only (update after deploy)
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://namegenx.com"],
+    origin: ["https://namegenx.com"],
     methods: ["POST", "GET"],
   })
 );
