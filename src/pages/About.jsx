@@ -1,6 +1,7 @@
 import "./About.css";
 import { useEffect } from "react";
 import { setSEO } from "../utils/seo";
+import FAQSection from "../components/FAQSection";
 const About = () => {
     useEffect(() => {
   setSEO({
@@ -153,6 +154,7 @@ const About = () => {
           identity you’ll be proud to use across all platforms.
         </p>
       </section>
+      <FAQSection page="about" title="About NameGenX: FAQs" />
     </main>
   );
 };
