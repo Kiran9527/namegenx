@@ -1,0 +1,203 @@
+/* =========================
+   PAGE WRAPPER
+========================= */
+.game-page {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* =========================
+   HERO
+========================= */
+.game-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.game-hero h1 {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.game-hero p {
+  color: #666;
+  font-size: 18px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* =========================
+   GENERATOR BOX
+========================= */
+.game-box {
+  background: #ffffff;
+  border: 1px solid #eee;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Input row */
+.game-input-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.game-input-row input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.game-input-row input:focus-visible {
+  outline: none;
+  border-color: #4f5dff;
+  box-shadow: 0 0 0 2px rgba(79, 93, 255, 0.15);
+}
+
+.game-input-row button {
+  background: #4f5dff;
+  color: #ffffff;
+  border: none;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.game-input-row button:hover {
+  background: #3e4cff;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.game-content h2 {
+  margin-top: 50px;
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.game-content p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* =========================
+   LINKS
+========================= */
+.game-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.game-links a {
+  border: 1px solid #ddd;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.game-links a:hover {
+  border-color: #4f5dff;
+  color: #4f5dff;
+}
+
+/* =========================
+   FAQ
+========================= */
+.game-faq {
+  margin-top: 80px;
+}
+
+.game-faq details {
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+}
+
+.game-faq summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 768px) {
+  .game-page {
+    padding: 60px 16px;
+  }
+
+  .game-hero h1 {
+    font-size: 32px;
+  }
+
+  .game-hero p {
+    font-size: 16px;
+  }
+
+  .game-box {
+    padding: 24px;
+  }
+
+  .game-input-row {
+    flex-direction: column;
+  }
+
+  .game-input-row button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+  .game-page {
+    padding: 48px 16px;
+  }
+
+  .game-hero h1 {
+    font-size: 26px;
+  }
+
+  .game-hero p {
+    font-size: 15px;
+  }
+
+  .game-content h2 {
+    font-size: 22px;
+  }
+
+  .game-box {
+    padding: 20px;
+  }
+
+  .game-links a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

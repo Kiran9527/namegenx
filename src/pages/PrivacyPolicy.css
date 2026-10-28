@@ -1,0 +1,108 @@
+/* =========================
+   PAGE WRAPPER
+========================= */
+.privacy-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+/* =========================
+   HERO
+========================= */
+.privacy-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.privacy-hero h1 {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.privacy-date {
+  font-size: 14px;
+  color: #777;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.privacy-content h2 {
+  font-size: 26px;
+  margin-top: 50px;
+  margin-bottom: 12px;
+}
+
+.privacy-content h3 {
+  font-size: 20px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.privacy-content p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+/* Lists */
+.privacy-content ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.privacy-content ul li {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 768px) {
+  .privacy-page {
+    padding: 60px 16px;
+  }
+
+  .privacy-hero h1 {
+    font-size: 32px;
+  }
+
+  .privacy-content h2 {
+    font-size: 24px;
+  }
+
+  .privacy-content h3 {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+  .privacy-page {
+    padding: 48px 16px;
+  }
+
+  .privacy-hero h1 {
+    font-size: 26px;
+  }
+
+  .privacy-content h2 {
+    font-size: 22px;
+  }
+
+  .privacy-content h3 {
+    font-size: 17px;
+  }
+
+  .privacy-content p,
+  .privacy-content ul li {
+    font-size: 14px;
+  }
+}
