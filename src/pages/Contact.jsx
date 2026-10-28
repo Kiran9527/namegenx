@@ -1,6 +1,7 @@
 import "./Contact.css";
 import { useEffect, useState } from "react";
 import { setSEO } from "../utils/seo";
+import FAQSection from "../components/FAQSection";
 
 const Contact = () => {
   // SEO
@@ -61,34 +62,32 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Handle submit
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setStatus("Sending message...");
+    setStatus("Saving message on this device...");
 
     try {
-      const res = await fetch("https://namegenx.com/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      if (res.ok) {
-        setStatus("✅ Message sent successfully! We’ll get back to you soon.");
-        setForm({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
-      } else {
-        setStatus("❌ Failed to send message. Please try again.");
+      const savedMessages = JSON.parse(
+        window.localStorage.getItem("namegenx-contact-messages") || "[]"
+      );
+      if (!Array.isArray(savedMessages)) {
+        throw new Error("Stored messages are not in the expected format.");
       }
-    } catch (error) {
-      setStatus("❌ Server error. Please try later.");
+      savedMessages.unshift({ ...form, savedAt: new Date().toISOString() });
+      window.localStorage.setItem(
+        "namegenx-contact-messages",
+        JSON.stringify(savedMessages.slice(0, 20))
+      );
+      setStatus("Message saved on this device only. It has not been sent.");
+      setForm({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch {
+      setStatus("Could not save your message. No message was sent.");
     } finally {
       setLoading(false);
     }
@@ -105,9 +104,9 @@ const Contact = () => {
       {/* Form */}
       <section className="contact-form-section">
         <div className="contact-card">
-          <h3>Send us a Message</h3>
+          <h3>Save a Message</h3>
           <p className="contact-sub">
-            Fill out the form below and we'll get back to you as soon as possible
+            This frontend-only form saves a private draft in this browser. It does not send email or contact the site owner.
           </p>
 
           <form onSubmit={handleSubmit}>
@@ -166,13 +165,14 @@ const Contact = () => {
               className="contact-btn"
               disabled={loading}
             >
-              {loading ? "Sending..." : "Send Message"}
+              {loading ? "Saving..." : "Save on This Device"}
             </button>
 
-            {status && <p className="contact-status">{status}</p>}
+            {status && <p className="contact-status" role="status">{status}</p>}
           </form>
         </div>
       </section>
+      <FAQSection page="contact" title="Contact and message FAQs" />
     </main>
   );
 };

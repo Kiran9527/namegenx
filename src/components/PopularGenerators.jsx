@@ -1,24 +1,22 @@
 import { useNavigate } from "react-router-dom";
+import { getGeneratorById } from "../data/catalog";
 import "./PopularGenerators.css";
 
 const generators = [
   {
+    id: "instagram",
     icon: "📸",
-    title: "Instagram Username Generator",
     desc: "Create unique and catchy Instagram usernames that stand out",
-    route: "/instagram-username-generator",
   },
   {
+    id: "youtube",
     icon: "▶️",
-    title: "YouTube Name Generator",
     desc: "Generate memorable channel names for your YouTube content",
-    route: "/youtube-name-generator",
   },
   {
+    id: "gaming",
     icon: "🎮",
-    title: "Gaming Username Generator",
     desc: "Get epic gaming usernames for all your favorite games",
-    route: "/gaming-username-generator",
   },
 ];
 
@@ -30,21 +28,24 @@ const PopularGenerators = () => {
       <h2>Popular Generators</h2>
 
       <div className="popular-grid">
-        {generators.map((item, index) => (
-          <div className="popular-card" key={index}>
-            <div className="popular-icon">{item.icon}</div>
-            <h3>{item.title}</h3>
-            <p>{item.desc}</p>
+        {generators.map((item) => {
+          const generator = getGeneratorById(item.id);
+          return (
+            <div className="popular-card" key={item.id}>
+              <div className="popular-icon">{item.icon}</div>
+              <h3>{generator.title}</h3>
+              <p>{item.desc}</p>
 
-            <button
-              className="popular-btn"
-              onClick={() => navigate(item.route)}
-              aria-label={`Go to ${item.title}`}
-            >
-              Generate Now <span>→</span>
-            </button>
-          </div>
-        ))}
+              <button
+                className="popular-btn"
+                onClick={() => navigate(generator.path)}
+                aria-label={`Go to ${generator.title}`}
+              >
+                Generate Now <span>→</span>
+              </button>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

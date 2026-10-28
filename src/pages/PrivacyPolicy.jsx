@@ -1,6 +1,7 @@
 import "./PrivacyPolicy.css";
 import { useEffect } from "react";
 import { setSEO } from "../utils/seo";
+import FAQSection from "../components/FAQSection";
 
 const PrivacyPolicy = () => {
   useEffect(() => {
@@ -145,6 +146,7 @@ const PrivacyPolicy = () => {
           through our contact page.
         </p>
       </section>
+      <FAQSection page="privacy" title="Privacy FAQs" />
     </main>
   );
 };

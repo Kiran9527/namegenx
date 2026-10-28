@@ -1,0 +1,61 @@
+.business-brand-generator {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.business-brand-generator .generator-toolbar {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.business-brand-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.business-brand-actions .generator-button {
+  flex: 1 1 240px;
+}
+
+.naming-tips,
+.related-generators {
+  margin-top: 28px;
+}
+
+.naming-tips {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--panel-soft);
+}
+
+.naming-tips h2,
+.related-generators h2 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.naming-tips p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.related-generators .catalog-grid {
+  margin-top: 14px;
+}
+
+@media (max-width: 640px) {
+  .business-brand-generator .generator-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .business-brand-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .business-brand-actions .generator-button {
+    flex-basis: auto;
+  }
+}

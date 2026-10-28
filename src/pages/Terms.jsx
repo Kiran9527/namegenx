@@ -1,6 +1,7 @@
 import "./Terms.css";
 import { useEffect } from "react";
 import { setSEO } from "../utils/seo";
+import FAQSection from "../components/FAQSection";
 
 const Terms = () => {
    useEffect(() => {
@@ -10,7 +11,7 @@ const Terms = () => {
     description:
       "Read the terms and conditions for using NameGenX’s username generator services for Instagram, YouTube, and gaming.",
 
-    canonical: "https://namegenx.com/terms-and-conditions",
+    canonical: "https://namegenx.com/terms",
 
     /* =========================
        OPEN GRAPH
@@ -18,7 +19,7 @@ const Terms = () => {
     ogTitle: "Terms & Conditions | NameGenX",
     ogDescription:
       "Review the terms and conditions for using NameGenX’s username generator platform.",
-    ogUrl: "https://namegenx.com/terms-and-conditions",
+    ogUrl: "https://namegenx.com/terms",
     ogType: "website",
 
     /* =========================
@@ -36,7 +37,7 @@ const Terms = () => {
       "@context": "https://schema.org",
       "@type": "TermsAndConditions",
       name: "Terms & Conditions - NameGenX",
-      url: "https://namegenx.com/terms-and-conditions",
+      url: "https://namegenx.com/terms",
       description:
         "Terms and conditions governing the use of NameGenX username generator services.",
     },
@@ -157,6 +158,7 @@ const Terms = () => {
           our contact page.
         </p>
       </section>
+      <FAQSection page="terms" title="Terms of use FAQs" />
     </main>
   );
 };

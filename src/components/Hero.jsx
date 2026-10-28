@@ -1,7 +1,10 @@
 import "./Hero.css";
 import { Link } from "react-router-dom";
+import { getGeneratorById } from "../data/catalog";
 
 const Hero = () => {
+  const instagramPath = getGeneratorById("instagram").path;
+
   return (
     <section className="hero">
       <div className="hero-content">
@@ -17,7 +20,7 @@ const Hero = () => {
         </p>
 
         <div className="hero-buttons">
-          <Link to="/instagram-username-generator">Get Started</Link>   
+          <Link to={instagramPath}>Get Started</Link>
         </div>
       </div>
     </section>
